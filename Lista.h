@@ -8,11 +8,10 @@ class Lista
         Lista(Elemento* primer);
         Elemento* ObtenerPrimer();
         void Agregar(Elemento* elemento);
-        void Eliminar(int indice);
-        void Modificar(int posicion, int indice);
+        void Eliminar(Elemento* elemento);
+        void Modificar(int posicion, Elemento* elemento);
         void MostrarLista();
 
     private:
         Elemento* _primer;
-        Elemento* ObtenerPorIndice(int posicion);
 };

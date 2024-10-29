@@ -5,7 +5,6 @@ class Elemento
 {
     public:
         Elemento(std::string nombre);
-        ~Elemento();
         std::string ObtenerNombre();
         Elemento* ObtenerSiguiente();
         void EstablecerSiguiente(Elemento* elemento);

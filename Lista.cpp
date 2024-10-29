@@ -11,20 +11,6 @@ Elemento *Lista::ObtenerPrimer()
 {
     return _primer;
 }
-
-Elemento *Lista::ObtenerPorIndice(int indice) {
-    Elemento *i = _primer;
-    int contador = 0;
-    while (i != nullptr) {
-        if (contador == indice) {
-            return i;
-        }
-        i = i->ObtenerSiguiente();
-        contador++;
-    }
-    throw "No fue encontrado";
-}
-
 void Lista::Agregar(Elemento *elemento)
 {
     if (!_primer)
@@ -42,10 +28,8 @@ void Lista::Agregar(Elemento *elemento)
     }
 }
 
-
-void Lista::Eliminar(int indice)
+void Lista::Eliminar(Elemento *elemento)
 {
-    Elemento *elemento = ObtenerPorIndice(indice);
     if (!_primer)
         return;
 
@@ -67,9 +51,8 @@ void Lista::Eliminar(int indice)
         delete elemento;
     }
 }
-void Lista::Modificar(int posicion, int indice)
+void Lista::Modificar(int posicion, Elemento *elemento)
 {
-    Elemento *elemento = ObtenerPorIndice(indice);
     if (!_primer)
         return;
 
@@ -92,11 +75,9 @@ void Lista::Modificar(int posicion, int indice)
 void Lista::MostrarLista()
 {
     Elemento *i = _primer;
-    int contador = 1;
     while (i != nullptr)
     {
-        std::cout <<contador<<". "<< i->ObtenerNombre() << std::endl;
+        std::cout << i->ObtenerNombre() << std::endl;
         i=i->ObtenerSiguiente();
-        contador++;
     }
 }

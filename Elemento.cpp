@@ -19,8 +19,3 @@ void Elemento::EstablecerSiguiente(Elemento* elemento)
 {
     _siguiente = elemento;
 }
-
-Elemento::~Elemento()
-{
-    std::cout << "Está siendo eliminado el elemento: " << _nombre << std::endl;
-}
